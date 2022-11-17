@@ -4,10 +4,10 @@ form.addEventListener("submit", submitForm);
 
 function submitForm(e) {
     e.preventDefault();
-    const name = document.getElementById("name");
+    const textarea = document.getElementById("textarea");
     const files = document.getElementById("files");
     const formData = new FormData();
-    formData.append("name", name.value);
+    formData.append("textarea", textarea.value);
     for(let i =0; i < files.files.length; i++) {
             formData.append("files", files.files[i]);
     }
