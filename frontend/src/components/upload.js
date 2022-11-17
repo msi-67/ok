@@ -4,13 +4,13 @@ export default function Upload() {
     // form.addEventListener("submit", submitForm);
     function submitForm() {
         // e.preventDefault();
-        const name = document.getElementById("name");
+        // const name = document.getElementById("name");
         const files = document.getElementById("files");
         const formData = new FormData();
         //formData.append("name", name.value);
-        for (let i = 0; i < files.files.length; i++) {
-            formData.append("files", files.files[i]);
-        }
+        // for (let i = 0; i < files.files.length; i++) {
+            formData.append("files", files.files[0]);
+        // }
 
         console.log("before fetch");
         fetch("http://localhost:5000/upload_files", {
@@ -30,7 +30,7 @@ export default function Upload() {
             <form id='form'>
             <div className="input-group">
                     <label htmlFor='files'>Select files</label>
-                    <input id='files' type="file" multiple/>
+                    <input id='files' type="file"/>
                 </div>
                 <button className="submit-btn" type='submit' onClick={submitForm}>Upload</button>
             </form>
