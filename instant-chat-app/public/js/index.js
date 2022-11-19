@@ -1,4 +1,4 @@
-var socket = io();
+const socket = io();
 var form = document.getElementById('form');
 var input = document.getElementById('input');
 var nick = document.querySelector(".nickBox");
